@@ -46,10 +46,9 @@ weekDays = [{
 fetch("https://weatherbit-v1-mashape.p.rapidapi.com/forecast/daily?lat=45.46&lon=9.18&units=metric", {
     "method": "GET",
     "headers": {
-        "x-rapidapi-key": "00f7e13c07mshcd12244b5c5f2d7p13c440jsna676b1c7c90d",
+        "x-rapidapi-key": "",
         "x-rapidapi-host": "weatherbit-v1-mashape.p.rapidapi.com"
 
-        // 231368692amsh4f5891a7ae2170cp154322jsn6a145049a038
 
     }
 })

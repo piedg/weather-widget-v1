@@ -1,7 +1,7 @@
 fetch("https://weatherbit-v1-mashape.p.rapidapi.com/forecast/daily?lat=51.50&lon=-0.1257&units=metric&lang=it", {
     "method": "GET",
     "headers": {
-        "x-rapidapi-key": "00f7e13c07mshcd12244b5c5f2d7p13c440jsna676b1c7c90d",
+        "x-rapidapi-key": "",
         "x-rapidapi-host": "weatherbit-v1-mashape.p.rapidapi.com"
     }
 })

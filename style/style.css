@@ -57,6 +57,7 @@ img {
 .weather-week-day {
     margin-bottom: 5px;
     text-transform: uppercase;
+    text-align: center;
 }
 
 .weather-week-day h4 {
@@ -208,6 +209,67 @@ img {
 
 
 /* BG Gradient */
+.bg-gradient-subzero {
+    background: linear-gradient(135deg, #5daef0, #02b6bd);
+    background-size: 400% 400%;
+    -webkit-animation: AnimationName 7s ease infinite;
+    animation: AnimationName 7s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@keyframes AnimationName {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+.bg-gradient-0 {
+    background: linear-gradient(135deg, #38a3fc, #1044d1);
+    background-size: 400% 400%;
+    -webkit-animation: AnimationName 7s ease infinite;
+    animation: AnimationName 7s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@keyframes AnimationName {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
 
 .bg-gradient-10 {
     background: linear-gradient(135deg, #0c6cbb, #978804);

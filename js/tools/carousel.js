@@ -26,12 +26,16 @@ function showSlides(n) {
 }
 
 
+
 $(".slideshow-container").on("swipeleft", function(e) {
-    e.preventDefault();
+    e.stopPropagation();
     showSlides(slideIndex += 1);
+
 });
 
 $(".slideshow-container").on("swiperight", function(e) {
-    e.preventDefault();
+    e.stopPropagation();
     showSlides(slideIndex -= 1);
+
+
 });

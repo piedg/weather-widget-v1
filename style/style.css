@@ -5,7 +5,11 @@ body {
 
 .slide-body {
     min-width: 100%;
+    min-height: 100vh;
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 * {
@@ -13,7 +17,7 @@ body {
 }
 
 .title {
-    margin: 40px 0px 20px 0px
+    margin-bottom: 40px;
 }
 
 .pagination {
@@ -29,6 +33,7 @@ h1 {
 }
 
 .weather-desc {
+    padding-top: 10px;
     margin: 0;
     text-transform: capitalize;
 }
@@ -42,8 +47,12 @@ img {
     vertical-align: middle;
 }
 
-.text-center {
+.weather-rt {
     text-align: center;
+}
+
+.weather-rt span {
+    font-size: 1.2rem;
 }
 
 .atm-temp {
@@ -65,16 +74,16 @@ img {
 }
 
 .weather-week {
-    margin: 50px 0px 25px 0px;
     display: flex;
     justify-content: space-evenly;
     color: #fff;
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-.ui-loader{
+.ui-loader {
     display: none!important;
 }
+
 
 /* Fading animation */
 
@@ -107,7 +116,7 @@ img {
 /* Slideshow container */
 
 .slideshow-container {
-    max-width: 1000px;
+   /* max-width: 1000px; */
     height: 70vh;
     position: relative;
     margin: auto;
@@ -209,6 +218,7 @@ img {
 
 
 /* BG Gradient */
+
 .bg-gradient-subzero {
     background: linear-gradient(135deg, #5daef0, #02b6bd);
     background-size: 400% 400%;

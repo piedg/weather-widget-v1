@@ -26,7 +26,6 @@ function showSlides(n) {
 }
 
 
-
 $(".slideshow-container").on("swipeleft", function(e) {
     e.stopPropagation();
     showSlides(slideIndex += 1);

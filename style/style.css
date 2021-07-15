@@ -201,6 +201,9 @@ h1 {
  } */
 
 @media (max-width: 576px) {
+    .layer {
+        height: 100vh;
+    }
     .rt-icon {
         width: 25%;
     }
@@ -286,7 +289,7 @@ h1 {
 }
 
 #nairobi {
-    background-image: url("../asset/images/bangkok.jpeg");
+    background-image: url("../asset/images/nairobi.jpeg");
     background-size: cover;
     background-position: center;
     position: relative;

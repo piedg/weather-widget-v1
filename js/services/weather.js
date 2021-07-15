@@ -76,15 +76,17 @@ const cities = [{
     }
 ]
 const iconsAnimatedPath = "asset/icons/animated/";
+const apiKey1 = "231368692amsh4f5891a7ae2170cp154322jsn6a145049a038";
+const apiKey2 = "210bad9669mshfbd1df1e66db7b2p12a274jsnd537df79dec7";
 
 for (let i = 0; i < cities.length; i++) {
 
     let apiUrl = "https://weatherbit-v1-mashape.p.rapidapi.com/forecast/daily?lat=" + cities[i].lat + "&lon=" + cities[i].lon + "&units=metric";
-
+    
     fetch(apiUrl, {
         "method": "GET",
         "headers": {
-            "x-rapidapi-key": "210bad9669mshfbd1df1e66db7b2p12a274jsnd537df79dec7",
+            "x-rapidapi-key": apiKey1,
             "x-rapidapi-host": "weatherbit-v1-mashape.p.rapidapi.com"
         }
     })

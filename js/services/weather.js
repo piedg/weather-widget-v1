@@ -11,7 +11,6 @@ const weekDays = [{
         'maxTemp': 0,
         'validDate': '',
         'iconCode': ''
-
     },
     {
         'day': 'tue',
@@ -19,7 +18,6 @@ const weekDays = [{
         'maxTemp': 0,
         'validDate': '',
         'iconCode': ''
-
     },
     {
         'day': 'wed',
@@ -34,7 +32,6 @@ const weekDays = [{
         'maxTemp': 0,
         'validDate': '',
         'iconCode': ''
-
     },
     {
         'day': 'fri',
@@ -42,7 +39,6 @@ const weekDays = [{
         'maxTemp': 0,
         'validDate': '',
         'iconCode': ''
-
     },
     {
         'day': 'sat',
@@ -50,7 +46,6 @@ const weekDays = [{
         'maxTemp': 0,
         'validDate': '',
         'iconCode': ''
-
     }
 ];
 
@@ -80,6 +75,7 @@ const cities = [{
         'lon': 36.8167
     }
 ]
+const iconsAnimatedPath = "asset/icons/animated/";
 
 for (let i = 0; i < cities.length; i++) {
 
@@ -88,15 +84,13 @@ for (let i = 0; i < cities.length; i++) {
     fetch(apiUrl, {
         "method": "GET",
         "headers": {
-            "x-rapidapi-key": "",
+            "x-rapidapi-key": "210bad9669mshfbd1df1e66db7b2p12a274jsnd537df79dec7",
             "x-rapidapi-host": "weatherbit-v1-mashape.p.rapidapi.com"
         }
     })
 
     .then(response => response.json())
         .then(response => {
-
-            console.log(response)
 
             rtTemp = response.data[0].temp;
             rtMinTemp = response.data[0].min_temp;
@@ -106,7 +100,7 @@ for (let i = 0; i < cities.length; i++) {
             rtIconCode = response.data[0].weather.code;
 
             //Meteo in real time
-            document.getElementById(`${cities[i].name}-rt-weather`).innerHTML += `<h1 class="title" id="city-${cities[i].name}"></h1><i id="${cities[i].name}-icon" class="main-icon fas"></i><p class="weather-desc" id="weather-${cities[i].name}"></p><h1 class="atm-temp" id="temp-${cities[i].name}"></h1><span id="minTemp-${cities[i].name}"></span><span>/</span><span id="maxTemp-${cities[i].name}"></span><br><span style="text-transform: uppercase" id="weekDay-${cities[i].name}"></span>&nbsp;<span style="margin: 0" id="date-${cities[i].name}"></span>`;
+            document.getElementById(`${cities[i].name}-rt-weather`).innerHTML += `<h1 class="title" id="city-${cities[i].name}"></h1><img id="${cities[i].name}-icon" class="rt-icon"><p class="weather-desc" id="weather-${cities[i].name}"></p><h1 class="atm-temp" id="temp-${cities[i].name}"></h1><span id="minTemp-${cities[i].name}"></span><span>/</span><span id="maxTemp-${cities[i].name}"></span><br><span style="text-transform: uppercase" id="weekDay-${cities[i].name}"></span>&nbsp;<span style="margin: 0" id="date-${cities[i].name}"></span>`;
 
             document.getElementById(`city-${cities[i].name}`).innerHTML = response.city_name;
             document.getElementById(`weather-${cities[i].name}`).innerHTML = response.data[0].weather.description;
@@ -117,7 +111,7 @@ for (let i = 0; i < cities.length; i++) {
             //document.getElementById("weekDay-" + cities[i].name).innerHTML = weekDays[rtWeekDay.getDay()].day;
 
             rtIcon = document.getElementById(`${cities[i].name}-icon`);
-            
+
             //Icone in base al tempo
             setWeatherIcon(rtIconCode, rtIcon)
 
@@ -135,7 +129,7 @@ for (let i = 0; i < cities.length; i++) {
 
                 weekIconCode = weekDays[mDay].iconCode;
 
-                document.getElementById(`weather-week-${cities[i].name}`).innerHTML += `<div class="weather-week-day"><h4 id="${cities[i].name}-${weekDays[mDay].day}"></h4><i id="${cities[i].name}-${weekDays[mDay].day}-icon" class="main-icon fas"></i><br><span id="${cities[i].name}-${weekDays[mDay].day}-minTemp"></span><span>/</span><span id="${cities[i].name}-${weekDays[mDay].day}-maxTemp"></span>`;
+                document.getElementById(`weather-week-${cities[i].name}`).innerHTML += `<div class="weather-week-day"><h4 id="${cities[i].name}-${weekDays[mDay].day}"></h4><img id="${cities[i].name}-${weekDays[mDay].day}-icon" src="" class="week-icon"><br><span id="${cities[i].name}-${weekDays[mDay].day}-minTemp"></span><span>/</span><span id="${cities[i].name}-${weekDays[mDay].day}-maxTemp"></span>`;
 
                 document.getElementById(`${cities[i].name}-${weekDays[mDay].day}`).innerHTML = weekDays[mDay].day;
                 document.getElementById(`${cities[i].name}-${weekDays[mDay].day}-minTemp`).innerHTML = weekDays[mDay].minTemp + "°";
@@ -146,9 +140,9 @@ for (let i = 0; i < cities.length; i++) {
                 setWeatherIcon(weekIconCode, weekIcon)
 
             }
-          
-            // Color Background in base alla temperatura
-            if (rtTemp >= 30) {
+
+            // Color Background in base alla temperatura attuale
+          /* if (rtTemp >= 30) {
                 document.getElementById(cities[i].name).classList.add("bg-gradient-30")
             } else if (rtTemp >= 20) {
                 document.getElementById(cities[i].name).classList.add("bg-gradient-20")
@@ -158,9 +152,8 @@ for (let i = 0; i < cities.length; i++) {
                 document.getElementById(cities[i].name).classList.add("bg-gradient-0")
             } else {
                 document.getElementById(cities[i].name).classList.add("bg-gradient-subzero")
-            }
+            } */
         })
-
 
     .catch((error) => {
         console.log('Fetch failed', error);
@@ -169,21 +162,30 @@ for (let i = 0; i < cities.length; i++) {
 
 function setWeatherIcon(code, element) {
     if (code === 800) {
-        element.classList.add("fa-sun");
+        element.src = iconsAnimatedPath + "day.svg";
 
     } else if (code === 801 || code === 802) {
-        element.classList.add("fa-cloud-sun");
+        element.src = iconsAnimatedPath + "cloudy-day-1.svg";
 
     } else if (code === 803 || code === 804) {
-        element.classList.add("fa-cloud");
+        element.src = iconsAnimatedPath + "cloudy.svg";
 
-    } else if (code > 599 && code < 611) {
-        element.classList.add("fa-snowflake");
+    } else if (code > 620 && code < 624) {
+        element.src = iconsAnimatedPath + "snowy-6.svg";
 
-    } else if (code > 299 && code < 523) {
-        element.classList.add("fa-cloud-sun-rain");
+    } else if (code === 600 || code === 610) {
+        element.src = iconsAnimatedPath + "snowy-1.svg";
 
-    } else if (code > 199 && code < 234) {
-        element.classList.add("fa-cloud-showers-heavy");
+    } else if (code >= 601 && code <= 609) {
+        element.src = iconsAnimatedPath + "snowy-5.svg";
+
+    } else if (code >= 500 && code <= 522) {
+        element.src = iconsAnimatedPath + "rainy-6.svg";
+
+    } else if (code >= 300 && code <= 302) {
+        element.src = iconsAnimatedPath + "rainy-7.svg";
+
+    } else if (code >= 200 && code <= 233) {
+        element.src = iconsAnimatedPath + "thunder.svg";
     }
 }

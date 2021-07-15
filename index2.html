@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, 
+    user-scalable=0">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Widget Meteo</title>
+</head>
+
+<body>
+    <div class="slideshow-container">
+        <div class="pagination">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+        </div>
+
+        <!-- Milan -->
+        <div class="mySlides fade">
+            <div class="slide-body" id="milan">
+                <div class="weather-rt" id="milan-rt-weather"></div>
+                <div class="weather-week" id="weather-week-milan"></div>
+                <div class="weather-graphic" id="weather-graphic-milan"></div>
+            </div>
+        </div>
+
+        <!-- London -->
+        <div class="mySlides fade">
+            <div class="slide-body" id="london">
+                <div class="weather-rt" id="london-rt-weather"></div>
+                <div class="weather-week" id="weather-week-london"></div>
+                <div class="weather-graphic" id="weather-graphic-london"></div>
+            </div>
+        </div>
+
+        <!-- Bangkok -->
+        <div class="mySlides fade">
+            <div class="slide-body" id="bangkok">
+                <div class="weather-rt" id="bangkok-rt-weather"></div>
+                <div class="weather-week" id="weather-week-bangkok"></div>
+                <div class="weather-graphic" id="weather-graphic-bangkok"></div>
+            </div>
+        </div>
+
+        <!-- Los Angeles -->
+        <div class="mySlides fade">
+            <div class="slide-body" id="losangeles">
+                <div class="weather-rt" id="losangeles-rt-weather"></div>
+                <div class="weather-week" id="weather-week-losangeles"></div>
+                <div class="weather-graphic" id="weather-graphic-losangeles"></div>
+            </div>
+        </div>
+
+        <!-- Nairobi -->
+        <div class="mySlides fade">
+            <div class="slide-body" id="nairobi">
+                <div class="weather-rt" id="nairobi-rt-weather"></div>
+                <div class="weather-week" id="weather-week-nairobi"></div>
+                <div class="weather-graphic" id="weather-graphic-nairobi"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <script src="js/tools/carousel.js"></script>
+    <script src="js/services/weather.js"></script>
+
+</body>
+</html>

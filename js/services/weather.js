@@ -115,12 +115,11 @@ for (let i = 0; i < cities.length; i++) {
             //Icone in base al tempo
             setWeatherIcon(rtIconCode, rtIcon)
 
-            //Controllo del giorno della settimana per previsione settimanale
             for (var index = 0; index < 7; index++) {
 
+                //Controllo del giorno della settimana per previsione settimanale
                 weekDay = new Date(response.data[index].valid_date.toString());
                 mDay = weekDay.getDay();
-
 
                 weekDays[mDay].minTemp = Math.round(response.data[index].min_temp);
                 weekDays[mDay].maxTemp = Math.round(response.data[index].max_temp);
@@ -140,19 +139,6 @@ for (let i = 0; i < cities.length; i++) {
                 setWeatherIcon(weekIconCode, weekIcon)
 
             }
-
-            // Color Background in base alla temperatura attuale
-          /* if (rtTemp >= 30) {
-                document.getElementById(cities[i].name).classList.add("bg-gradient-30")
-            } else if (rtTemp >= 20) {
-                document.getElementById(cities[i].name).classList.add("bg-gradient-20")
-            } else if (rtTemp >= 10) {
-                document.getElementById(cities[i].name).classList.add("bg-gradient-10")
-            } else if (rtTemp >= 0) {
-                document.getElementById(cities[i].name).classList.add("bg-gradient-0")
-            } else {
-                document.getElementById(cities[i].name).classList.add("bg-gradient-subzero")
-            } */
         })
 
     .catch((error) => {
@@ -170,7 +156,7 @@ function setWeatherIcon(code, element) {
     } else if (code === 803 || code === 804) {
         element.src = iconsAnimatedPath + "cloudy.svg";
 
-    } else if (code > 620 && code < 624) {
+    } else if (code >= 621 && code <= 623) {
         element.src = iconsAnimatedPath + "snowy-6.svg";
 
     } else if (code === 600 || code === 610) {

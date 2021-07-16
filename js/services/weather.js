@@ -74,7 +74,8 @@ const cities = [{
         'lat': -1.28,
         'lon': 36.8167
     }
-]
+];
+
 const iconsAnimatedPath = "asset/icons/animated/";
 const apiKey1 = "231368692amsh4f5891a7ae2170cp154322jsn6a145049a038";
 const apiKey2 = "210bad9669mshfbd1df1e66db7b2p12a274jsnd537df79dec7";
@@ -86,7 +87,7 @@ for (let i = 0; i < cities.length; i++) {
     fetch(apiUrl, {
         "method": "GET",
         "headers": {
-            "x-rapidapi-key": apiKey1,
+            "x-rapidapi-key": apiKey2,
             "x-rapidapi-host": "weatherbit-v1-mashape.p.rapidapi.com"
         }
     })
@@ -109,12 +110,10 @@ for (let i = 0; i < cities.length; i++) {
             document.getElementById(`temp-${cities[i].name}`).innerHTML = Math.round(rtTemp) + "<sup style='font-size: 3.5rem'>&deg;</sup>";
             document.getElementById(`maxTemp-${cities[i].name}`).innerHTML = Math.round(rtMaxTemp) + "°";
             document.getElementById(`minTemp-${cities[i].name}`).innerHTML = Math.round(rtMinTemp) + "°";
-            //document.getElementById("date-" + cities[i].name).innerHTML = rtDate;
-            //document.getElementById("weekDay-" + cities[i].name).innerHTML = weekDays[rtWeekDay.getDay()].day;
 
             rtIcon = document.getElementById(`${cities[i].name}-icon`);
 
-            //Icone in base al tempo
+            //Icone in base al tempo real time
             setWeatherIcon(rtIconCode, rtIcon)
 
             for (var index = 0; index < 7; index++) {

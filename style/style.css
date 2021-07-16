@@ -120,6 +120,7 @@ h1 {
 
 /* Slideshow container */
 .slideshow-container {
+    touch-action: manipulation; 
     position: relative;
     margin: auto;
 }
